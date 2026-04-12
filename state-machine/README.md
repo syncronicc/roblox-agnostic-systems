@@ -128,4 +128,4 @@ export type StateMachineObject = {
 
 ## License
 
-MIT — see source header.
+MIT — kts
