@@ -1,19 +1,46 @@
-# Roblox Packages ( agnostic systems )
+# Roblox Packages 💻
 
-A collection of modular, framework-agnostic Roblox systems designed for building scalable and maintainable game architecture.
+## Introduction
 
-These systems follow a service-based approach and are intended for use in live game environments.
+This repository is a collection of reusable, framework-agnostic Roblox packages.
+They are meant to help you build common game systems faster with clean, modular Luau code.
 
-Included Systems:
+## Tools  & Type checking mode
 
-- Remote Validation Layer – validates and rate-limits client requests
-- Data Service – handles player data persistence and caching
-- Network Service – central routing for client-server communication
-- State Machine – modular gameplay state handling
-- Object Pool – optimized instance reuse for performance
-- Timer Service – scheduling and delayed execution
+- Strict module type checking (`--!strict`).
+- Roblox services and APIs
+- Rojo
+- Selene
+- Git
 
-## Featured System
+## Install (Git + Rojo)
 
-### Remote Validation Layer
-A centralized layer for validating and rate-limiting client requests before they reach gameplay logic. This helps enforce server authority, reduce remote spam, and keep communication between client and server structured and consistent.
+```powershell
+git clone https://github.com/<your-name>/roblox-packages.git
+cd roblox-packages
+```
+
+Build any package:
+
+```powershell
+rojo build <package-folder>/default.project.json -o <package-name>.rbxm
+```
+
+Or serve it directly to Studio:
+
+```powershell
+rojo serve <package-folder>/default.project.json
+```
+
+Example:
+
+```powershell
+rojo build timer-service/default.project.json -o timer-service.rbxm
+```
+
+## Use in Studio
+
+1. Build a package with Rojo.
+2. Import the `.rbxm` into Studio.
+3. Put it in `ReplicatedStorage`.
+4. `require()` it in your scripts.
